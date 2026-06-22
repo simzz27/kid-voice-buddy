@@ -32,10 +32,9 @@ const SENSITIVE_TOPIC_PATTERN =
   /\b(hurt myself|self.?harm|suicide|abuse|kill|weapon|gun|drugs?)\b/i;
 
 // Only allow requests from your own deployed site, not just anyone on the internet.
-// Replace with your actual deployed domain(s) before going live.
 const ALLOWED_ORIGINS = [
   "http://localhost:5173",
-  "https://curio-voice-buddy.pages.dev", // <-- update after you deploy the frontend
+  "https://curio-voice-buddy.pages.dev", 
 ];
 
 function corsHeaders(origin) {
@@ -91,7 +90,7 @@ export default {
       );
     }
 
-    // env.GEMINI_API_KEY is a Cloudflare secret — never logged, never in source.
+    // API key is a Cloudflare secret, injected at runtime.
     const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=${env.GEMINI_API_KEY}`;
 
     try {
