@@ -1,0 +1,7 @@
+name = "curio-gemini-proxy"
+main = "index.js"
+compatibility_date = "2026-06-01"
+
+# The GEMINI_API_KEY is NOT set here. It is set via:
+#   wrangler secret put GEMINI_API_KEY
+# This keeps it out of this file entirely, so it's safe to commit wrangler.toml.
